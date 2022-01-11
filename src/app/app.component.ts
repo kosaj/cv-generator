@@ -6,7 +6,6 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { jsPDF } from 'jspdf';
 
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
@@ -18,7 +17,6 @@ var htmlToPdfmake = require('html-to-pdfmake');
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  private readonly docInstance = new jsPDF();
   title = 'cvToPdf';
 
   @ViewChild('kebab', { static: true }) kebab!: ElementRef;
