@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "potato": "ng build --output-path docs --base-href \"https://kosaj.github.io/cv-generator/\""
+    "potato": "ng build --configuration production --output-path docs --base-href \"https://kosaj.github.io/cv-generator/\""
   },
   "private": true,
   "dependencies": {
