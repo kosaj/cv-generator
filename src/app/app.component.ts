@@ -27,9 +27,19 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {}
 
   test() {
-    var html = htmlToPdfmake((this.kebab.nativeElement as Element).innerHTML);
-    console.log(html);
-    const documentDefinition = { content: html };
+    const x = (this.kebab.nativeElement as Element).innerHTML;
+
+    console.log(x);
+
+    const html = htmlToPdfmake(x, {
+      imagesByReference: true,
+    });
+
+    const documentDefinition = {
+      content: html.content,
+      images: html.images,
+    };
+    console.log(documentDefinition);
     pdfMake.createPdf(documentDefinition).open();
   }
 }
